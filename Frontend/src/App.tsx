@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+type Workshop = {
+  id: number;
+  title: string;
+  date: string;
+};
+
+export default function App() {
+  const [workshops, setWorkshops] = useState<Workshop[]>([
+    { id: 1, title: "React Basics", date: "2026-01-10" },
+    { id: 2, title: "Tailwind Intro", date: "2026-01-15" },
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="mx-auto max-w-md rounded-xl bg-white p-5 shadow">
+        <h1 className="mb-4 text-xl font-semibold">Workshop Tracker</h1>
 
-export default App
+        <ul className="space-y-2">
+          {workshops.map((w) => (
+            <li
+              key={w.id}
+              className="flex items-center justify-between rounded-lg border p-3"
+            >
+              <div>
+                <p className="font-medium">{w.title}</p>
+                <p className="text-sm text-gray-500">{w.date}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {workshops.length === 0 && (
+          <p className="mt-4 text-center text-sm text-gray-500">
+            No workshops added yet.
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
