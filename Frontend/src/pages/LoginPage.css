@@ -1,0 +1,296 @@
+/* =========================
+RESET & BASE STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* =========================
+WRAPPER STYLES
+========================= */
+.login-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+background-color: #ffffff;
+padding: 20px;
+}
+
+/* =========================
+MAIN CONTAINER
+========================= */
+.login-container {
+display: flex;
+width: 100%;
+max-width: 1200px;
+background-color: #ffffff;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+LEFT IMAGE PANEL
+========================= */
+.login-image-panel {
+display: none;
+width: 50%;
+position: relative;
+overflow: hidden;
+}
+
+.login-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* =========================
+RIGHT FORM PANEL
+========================= */
+.login-form-panel {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 60px 40px;
+}
+
+.login-form-container {
+width: 100%;
+max-width: 420px;
+}
+
+/* =========================
+LOGO SECTION
+========================= */
+/* Logo container - center and some spacing */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px; /* add more space below logo */
+}
+
+/* Logo badge - smaller and better aspect ratio */
+.logo-badge {
+  width: 200px;   /* smaller width */
+  height: 80px;   /* smaller height */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* contain to prevent cropping */
+}
+
+
+/* =========================
+HEADINGS
+========================= */
+.login-title {
+font-size: 32px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 8px;
+color: #111827;
+}
+
+.login-subtitle {
+text-align: center;
+color: #6b7280;
+font-size: 14px;
+margin-bottom: 32px;
+line-height: 1.6;
+}
+
+/* =========================
+FORM
+========================= */
+.login-form {
+display: flex;
+flex-direction: column;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-label {
+font-size: 14px;
+font-weight: 600;
+margin-bottom: 8px;
+display: block;
+}
+
+/* =========================
+INPUTS
+========================= */
+.input-wrapper {
+position: relative;
+}
+
+.input-icon {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: #9ca3af;
+}
+
+.form-input {
+width: 100%;
+padding: 14px 16px 14px 48px;
+border-radius: 50px;
+border: 1px solid #d1d5db;
+outline: none;
+font-size: 14px;
+}
+
+.form-input:focus {
+border-color: #4338ca;
+box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+}
+
+.input-error {
+border-color: #ef4444;
+}
+
+.error-message {
+color: #ef4444;
+font-size: 12px;
+margin-top: 6px;
+}
+
+/* =========================
+PASSWORD TOGGLE
+========================= */
+.password-toggle {
+position: absolute;
+right: 16px;
+top: 50%;
+transform: translateY(-50%);
+background: none;
+border: none;
+cursor: pointer;
+color: #9ca3af;
+}
+
+/* =========================
+FORGOT PASSWORD
+========================= */
+.forgot-password-container {
+text-align: right;
+margin-bottom: 24px;
+}
+
+.forgot-password-link {
+background: none;
+border: none;
+color: #4338ca;
+cursor: pointer;
+font-size: 14px;
+}
+
+/* =========================
+BUTTONS
+========================= */
+.sign-in-button {
+background-color: #4338ca;
+color: white;
+padding: 14px;
+border-radius: 50px;
+border: none;
+cursor: pointer;
+font-weight: 600;
+margin-bottom: 24px;
+}
+
+.sign-in-button:hover {
+background-color: #3730a3;
+}
+
+/* =========================
+DIVIDER
+========================= */
+.divider-container {
+display: flex;
+align-items: center;
+gap: 16px;
+margin-bottom: 24px;
+}
+
+.divider-line {
+flex: 1;
+height: 1px;
+background-color: #e5e7eb;
+}
+
+.divider-text {
+font-size: 13px;
+color: #9ca3af;
+}
+
+/* =========================
+GOOGLE BUTTON
+========================= */
+.google-sign-in-button {
+border: 1px solid #d1d5db;
+padding: 14px;
+border-radius: 50px;
+background: white;
+cursor: pointer;
+font-size: 15px;
+margin-bottom: 24px;
+}
+
+.google-sign-in-button:hover {
+background-color: #f9fafb;
+}
+
+/* =========================
+SIGN UP
+========================= */
+.sign-up-prompt {
+text-align: center;
+font-size: 14px;
+}
+
+.sign-up-link {
+background: none;
+border: none;
+color: #4338ca;
+font-weight: bold;
+cursor: pointer;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+@media (min-width: 1024px) {
+.login-image-panel {
+display: block;
+}
+
+.login-form-panel {
+width: 50%;
+}
+}
+
+@media (max-width: 768px) {
+.login-container {
+border-radius: 0;
+min-height: 100vh;
+}
+}
